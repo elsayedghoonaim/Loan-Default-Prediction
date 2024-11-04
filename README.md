@@ -18,10 +18,14 @@ The dataset comprises a large number of loan applications, each with features su
   - Visualize the distribution of numerical features using histograms and box plots.
   - Analyze categorical features using bar plots and frequency tables.
   - Explore relationships between features using scatter plots and correlation matrices.
-* **Data Cleaning:**
-  - Handle missing values by imputation or removal.
-  - Address outliers using techniques like capping or flooring.
-  - Encode categorical features using appropriate encoding techniques (e.g., one-hot encoding, label encoding).
+* **Data Preprocessing:**
+  **Categorical Encoding:**
+   - Categorical features like `Education`, `EmploymentType`, and `LoanPurpose` were encoded using one-hot encoding to represent them as numerical features.
+   - Binary categorical features like `HasMortgage`, `HasDependents`, `HasCosigner`, and `MaritalStatus` were label encoded.
+  **Normalization:**
+   - Numerical features were scaled using Min-Max scaling to bring them within a specific range (0 to 1). This helps improve the performance of some machine learning algorithms.
+* **Handling Imbalanced Classes:**
+  - The dataset exhibited class imbalance, with a significant majority of non-default loans compared to default loans. To address this issue, we employed the **SMOTE** (Synthetic Minority Over-sampling Technique) technique. SMOTE generates synthetic minority class          samples to balance the class distribution.
 * **Feature Engineering:**
   - Create new features by combining existing ones (e.g., income-to-loan-ratio).
   - Transform numerical features (e.g., log transformation, normalization).
